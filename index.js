@@ -19,9 +19,9 @@ const executeCommand = async (command, args, options = {}) => {
             stdout += data.toString();
         });
 
-        // child.stderr.on('data', function(data) {
+        child.stderr.on('data', function(data) {
         //   stderr += data.toString();
-        // });
+        });
 
         child.on('close', (code, signal) => {
             if (code !== 0) {
